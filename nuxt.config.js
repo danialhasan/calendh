@@ -32,12 +32,12 @@ module.exports = {
 
   firebase: {
     config: {
-      apiKey: "AIzaSyBOMddvZ9yLuqJpINXqFmzrVSrjAo5I_wE",
-      authDomain: "calendh-xyz.firebaseapp.com",
-      projectId: "calendh-xyz",
-      storageBucket: "calendh-xyz.appspot.com",
-      messagingSenderId: "707209656771",
-      appId: "1:707209656771:web:10ecf5a94c9fbe049de576",
+      apiKey: "",
+      authDomain: "",
+      projectId: "",
+      storageBucket: "",
+      messagingSenderId: "",
+      appId: "",
     },
     services: {
       auth: true, // Just as example. Can be any other service.

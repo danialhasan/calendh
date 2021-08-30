@@ -1,8 +1,5 @@
 {
-  "NuxtLogo": {
-    "description": "Auto imported from components/NuxtLogo.vue"
-  },
-  "Tutorial": {
-    "description": "Auto imported from components/Tutorial.vue"
+  "FirestoreForm": {
+    "description": "Auto imported from components/FirestoreForm.vue"
   }
 }

@@ -32,7 +32,7 @@ module.exports = {
 
   firebase: {
     config: {
-      apiKey: "AIzaSyBOMddvZ9yLuqJpINXqFmzrVSrjAo5I_wE",
+      apiKey: "AIzaSyAZVlhLJ7XJS-TJQWc_2MQjs7LSz0qaBhQ",
       authDomain: "calendh-xyz.firebaseapp.com",
       projectId: "calendh-xyz",
       storageBucket: "calendh-xyz.appspot.com",

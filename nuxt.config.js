@@ -29,15 +29,14 @@ module.exports = {
     "@nuxtjs/tailwindcss",
     "@nuxtjs/firebase",
   ],
-
   firebase: {
     config: {
-      apiKey: "AIzaSyAZVlhLJ7XJS-TJQWc_2MQjs7LSz0qaBhQ",
+      apiKey: process.env.FIREBASE_API_KEY,
       authDomain: "calendh-xyz.firebaseapp.com",
       projectId: "calendh-xyz",
       storageBucket: "calendh-xyz.appspot.com",
       messagingSenderId: "707209656771",
-      appId: "1:707209656771:web:10ecf5a94c9fbe049de576",
+      appId: process.env.FIREBASE_APP_ID,
     },
     services: {
       auth: true, // Just as example. Can be any other service.

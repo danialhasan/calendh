@@ -65,7 +65,6 @@ export default {
           .doc(this.updateDocumentValue);
 
         const response = await docRef.set({ test: "test", testing: "testing" });
-
         console.log(response);
       } catch (error) {
         console.log(error);

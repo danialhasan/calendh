@@ -1,12 +1,16 @@
 <template>
-  <firestore-form />
+  <div>
+    <login-form />
+    <!-- <firestore-form /> -->
+  </div>
 </template>
 
 <script>
 import axios from "axios";
 import FirestoreForm from "~/components/FirestoreForm.vue";
+import LoginForm from "~/components/LoginForm.vue";
 export default {
-  components: { FirestoreForm },
+  components: { FirestoreForm, LoginForm },
   data() {
     return {};
   },

@@ -1,9 +1,9 @@
 {
-  "functions":{
-    "source":"functions",
-    "predeploy":[
+  "functions": {
+    "source": "functions",
+    "predeploy": [
       "npm run build && rm -rf functions/nuxt && cp -r .nuxt/ functions/nuxt/ && cp nuxt.config.js functions/"
-  ]
+    ]
   },
   "firestore": {
     "rules": "firestore.rules",
@@ -11,7 +11,7 @@
   },
   "hosting": {
     "public": "public",
-    "predeploy":[
+    "predeploy": [
       "rm -rf public/* && mkdir -p public/_nuxt && cp -r .nuxt/dist/client/ public/_nuxt && cp -a static/. public/"
     ],
     "ignore": [
@@ -19,12 +19,28 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites":[
+    "rewrites": [
       {
-        "source":"**", 
-        "function":"ssrapp"
+        "source": "**",
+        "function": "ssrapp"
       }
     ]
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "ui": {
+      "enabled": true
+    }
   }
-
 }

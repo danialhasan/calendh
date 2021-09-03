@@ -3,9 +3,9 @@ const { Nuxt } = require("nuxt-start");
 const axios = require("axios");
 const nuxtConfig = require("./nuxt.config.js");
 const express = require("express");
-const cors = require("cors")({ origin: true });
+// const cors = require("cors")({ origin: true });
 
-const app = express();
+// const app = express();
 
 // Middleware
 // app.use(cors);

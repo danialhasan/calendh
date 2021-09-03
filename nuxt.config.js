@@ -11,7 +11,19 @@ module.exports = {
       { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css",
+      },
+    ],
+    script: [
+      {
+        src: "https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js",
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -39,9 +51,10 @@ module.exports = {
       appId: process.env.FIREBASE_APP_ID,
     },
     services: {
-      auth: true, // Just as example. Can be any other service.
+      auth: { ssr: true }, // Just as example. Can be any other service.
       firestore: true,
       functions: true,
+      hosting: true,
     },
   },
   // Modules: https://go.nuxtjs.dev/config-modules

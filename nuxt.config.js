@@ -23,6 +23,10 @@ module.exports = {
       {
         src: "https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js",
       },
+      {
+        src: "https://kit.fontawesome.com/e674c7fc1d.js",
+        crossorigin: "anonymous",
+      },
     ],
   },
 
@@ -33,7 +37,12 @@ module.exports = {
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: [
+    {
+      path: "~/components",
+      pathPrefix: false,
+    },
+  ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [

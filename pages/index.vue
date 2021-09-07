@@ -1,6 +1,25 @@
 <template>
-  <div>
+  <div class="m-4">
+    <!-- <button @click="logIn" class="px-6 py-4 bg-blue-500 text-white rounded-xl">
+      Log in
+    </button>
+    <div v-if="this.$store.state.loggedIn" class="bg-green-500 rounded-xl p-12">
+      <h1 class="text-xl font-bold">You're logged in!</h1>
+    </div> -->
+    <button @click="logIn" class="px-6 py-4 bg-blue-500 text-white rounded-xl">
+      Dispatch New Account Action
+    </button>
+    <button
+      @click="toggleErrorExists"
+      class="px-6 py-4 bg-black text-white rounded-xl"
+    >
+      Toggle Error Exists
+    </button>
     <login-form />
+    <!-- BUG: The v-if does not toggle the visibility of the component. this.errorExists
+tracks the store and is therefore verifiably reactive. -->
+    <error-message v-if="!this.errorExists" />
+    <!-- <error-message  /> -->
     <!-- <firestore-form /> -->
   </div>
 </template>
@@ -9,10 +28,32 @@
 import axios from "axios";
 import FirestoreForm from "~/components/FirestoreForm.vue";
 import LoginForm from "~/components/LoginForm.vue";
+import ErrorMessage from "~/components/ErrorMessage.vue";
+
 export default {
-  components: { FirestoreForm, LoginForm },
+  components: { FirestoreForm, LoginForm, ErrorMessage },
   data() {
-    return {};
+    return {
+      errorExists: this.$store.state.errorExists,
+    };
+  },
+  methods: {
+    toggleErrorExists() {
+      this.$store.commit("toggleErrorExists");
+      console.log(
+        "errorExists in index.vue page",
+        this.$store.state.errorExists
+      );
+    },
+    logIn() {
+      // this.$store.commit("logIn");
+      // console.log("loggedIn status:", this.$store.state.loggedIn);
+
+      this.$store.dispatch("createNewAccount", {
+        email: "test@test.com",
+        password: "placeholder",
+      });
+    },
   },
   // async mounted() {
   //   try {

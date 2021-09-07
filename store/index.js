@@ -6,7 +6,7 @@ export const state = () => ({
   registerEmail: "",
   registerPassword: "",
   loggedIn: false,
-  errorExists: false,
+  errorExists: true,
   errorMessage: "",
 });
 
